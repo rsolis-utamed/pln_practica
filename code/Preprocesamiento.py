@@ -2,7 +2,7 @@ import re
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-class Procesamiento:
+class Preprocesador:
     def __init__(self, max_features=2000, min_df=3, max_df=0.95):
         """
         Inicializa la clase con los parámetros de vectorización 
@@ -55,16 +55,3 @@ class Procesamiento:
         
         cleaned_series = series.apply(self.clean_text)
         return self.vectorizer.transform(cleaned_series)
-"""
-# --- EJEMPLO DE USO EN TU NOTEBOOK ---
-
-# 1. Instanciar la clase
-processor = TextProcessor(max_features=2000)
-
-# 2. Ejecutar preprocesamiento y vectorización (Paso 4 de tu notebook)
-# Suponiendo que tu columna original es 'texto'
-X, df_combined['texto_limpio'] = processor.fit_transform(df_combined['texto'])
-
-# 3. Ahora X está listo para el LDA o Naive Bayes
-print("Matriz X generada con forma:", X.shape)
-"""
