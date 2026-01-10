@@ -13,6 +13,7 @@ class Preprocessor():
   5. Eliminar stop words.
   """
   def __init__(self,nlp,manual_stop_words=[]):
+    print("version 2.1.0)
     self.manual_stop_words=manual_stop_words
     self.nlp=nlp
     
@@ -55,6 +56,7 @@ class Preprocessor():
       self.clean_tokens=self.__step_5_delStopWords(self.lemmantized_tokens)
       return self.clean_tokens
       
+
 
 
 
