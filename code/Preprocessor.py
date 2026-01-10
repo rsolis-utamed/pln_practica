@@ -3,7 +3,7 @@ import spacy
 import nltk
 from nltk.corpus import stopwords
 
-class Preprocesar():
+class Preprocessor():
   """
   Esta clase realiza el preprocesamiento de un texto, aplicando los siguientes pasos en orden:
   1. Pasar a minúsculas.
@@ -12,12 +12,9 @@ class Preprocesar():
   4. Lematizar el texto.
   5. Eliminar stop words.
   """
-  def __init__(self,manual_stop_words=[]):
+  def __init__(self,nlp,manual_stop_words=[]):
     self.manual_stop_words=manual_stop_words
-    try:
-      self.nlp = spacy.load("es_core_news_sm") # Download pretrained spanish model
-    except:
-      print("Spacy model non found. Execute: python -m spacy download es_core_news_sm")
+    self.nlp=nlp
     
   
   def __step1_toLowerParse(self,text):
@@ -58,5 +55,6 @@ class Preprocesar():
       self.clean_tokens=self.__step_5_delStopWords(self.lemmantized_tokens)
       return self.clean_tokens
       
+
 
 
