@@ -44,7 +44,7 @@ class Preprocessor():
       print("   Deleting stop words in text...")
       stop_words_es = set(stopwords.words('spanish')).union(set(manual_stop_words))
       self.clean_tokens = [t for t in self.lemmantized_tokens if t not in stop_words_es and len(t) > 2]
-      return "".join(self.clean_tokens)
+      return " ".join(self.clean_tokens)
         
   def toPreprocessText(self,text):
       self.text=text
@@ -55,6 +55,7 @@ class Preprocessor():
       self.clean_tokens=self.__step_5_delStopWords(self.lemmantized_tokens)
       return self.clean_tokens
       
+
 
 
 
