@@ -15,7 +15,7 @@ class Preprocesar():
   def __init__(self,manual_stop_words=[]):
     self.manual_stop_words=manual_stop_words
     try:
-      nlp = spacy.load("es_core_news_sm") # Download pretrained spanish model
+      self.nlp = spacy.load("es_core_news_sm") # Download pretrained spanish model
     except:
       print("Spacy model non found. Execute: python -m spacy download es_core_news_sm")
     
@@ -35,7 +35,7 @@ class Preprocesar():
     
   def __step_3_toTokenize(self,text):
       print("   Tokenizing text...")
-      self.tokens = nlp(self.text)
+      self.tokens = self.nlp(self.text)
       return self.tokens
   
   def __step4_toLemmantize(self,tokens):
@@ -58,4 +58,5 @@ class Preprocesar():
       self.clean_tokens=self.__step_5_delStopWords(self.lemmantized_tokens)
       return self.clean_tokens
       
+
 
