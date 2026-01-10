@@ -14,6 +14,11 @@ class Preprocesar():
   """
   def __init__(self,manual_stop_words=[]):
     self.manual_stop_words=manual_stop_words
+    try:
+      nlp = spacy.load("es_core_news_sm") # Download pretrained spanish model
+    except:
+      print("Spacy model non found. Execute: python -m spacy download es_core_news_sm")
+    
   
   def __step1_toLowerParse(self,text):
         print("   Parsing to lower...")
@@ -53,3 +58,4 @@ class Preprocesar():
       self.clean_tokens=self.__step_5_delStopWords(self.lemmantized_tokens)
       return self.clean_tokens
       
+
