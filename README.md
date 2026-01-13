@@ -8,7 +8,9 @@ Este repositorio contiene la implementación de un agente inteligente utilizando
 🚀 Estructura del Repositorio
 
 /code: Contiene los notebooks para extraer el corpus, modelar y crear un agente junto con un script para preprocesar los textos con la lógica del agente.
+
 /models: Modelos preentrenados para el análisis de sentimiento y modelado de tópicos
+
 /data: Recursos y archivos necesarios para el procesamiento.
 
 
